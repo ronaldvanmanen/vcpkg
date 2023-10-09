@@ -54,7 +54,7 @@ if(NOT _CMAKE_IN_TRY_COMPILE)
 
     set(MP_BUILD_FLAG "")
     if(NOT (CMAKE_CXX_COMPILER MATCHES "clang-cl.exe"))
-        set(MP_BUILD_FLAG "/MP")
+        set(MP_BUILD_FLAG "/MP$ENV{VCPKG_MAX_CONCURRENCY}")
     endif()
 
     set(CMAKE_CXX_FLAGS " /nologo /DWIN32 /D_WINDOWS /W3 ${CHARSET_FLAG} /GR /EHsc ${MP_BUILD_FLAG} ${VCPKG_CXX_FLAGS}" CACHE STRING "")
