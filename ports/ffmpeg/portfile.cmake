@@ -65,7 +65,7 @@ if(VCPKG_TARGET_ARCHITECTURE STREQUAL "x86" OR VCPKG_TARGET_ARCHITECTURE STREQUA
   set(OPTIONS "${OPTIONS} --enable-asm --enable-x86asm")
 endif()
 
-if(VCPKG_TARGET_IS_WINDOWS)
+if(VCPKG_HOST_IS_WINDOWS)
     vcpkg_acquire_msys(MSYS_ROOT)
     set(SHELL "${MSYS_ROOT}/usr/bin/bash.exe")
 else()
